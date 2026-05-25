@@ -68,11 +68,6 @@ export function HeroSection({ profile }: HeroSectionProps) {
             </div>
           )}
         </div>
-        <div className="profile-caption" aria-hidden="true">
-          <span>{profile.specialties[0]}</span>
-          <span>{profile.specialties[1]}</span>
-          <span>{profile.specialties[2]}</span>
-        </div>
       </div>
     </section>
   );

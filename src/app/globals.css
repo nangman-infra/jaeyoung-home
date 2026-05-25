@@ -125,9 +125,12 @@ main {
   max-width: 42rem;
   margin: 0;
   color: var(--accent-strong);
-  font-size: clamp(1.25rem, 2.6vw, 1.95rem);
+  font-size: clamp(1.2rem, 2.2vw, 1.72rem);
   font-weight: 800;
   line-height: 1.25;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 .hero-summary {
@@ -214,22 +217,6 @@ main {
   color: var(--accent);
   font-size: clamp(2.6rem, 7vw, 5rem);
   font-weight: 900;
-}
-
-.profile-caption {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.profile-caption span {
-  border: 1px solid rgba(0, 100, 255, 0.18);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.78);
-  padding: 0.55rem 0.75rem;
-  color: var(--accent);
-  font-size: 0.86rem;
-  font-weight: 850;
 }
 
 .page-content {
@@ -367,6 +354,10 @@ main {
     max-width: 22rem;
     width: 100%;
     justify-self: center;
+  }
+
+  .hero-role {
+    white-space: normal;
   }
 
   .feature-list,

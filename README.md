@@ -17,11 +17,11 @@
 
 이 프로젝트는 Next.js App Router 기반의 정적 포트폴리오 페이지입니다.
 
-1. `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/data/profile.ts`에 한국어/영어 포트폴리오 데이터를 정의합니다.
-2. `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/components/portfolio-page.tsx`가 현재 선택된 언어 상태를 관리합니다.
-3. `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/app/page.tsx`가 포트폴리오 페이지 컴포넌트를 렌더링합니다.
-4. 각 섹션 컴포넌트는 선택된 언어의 `profile` 데이터를 props로 받아 화면에 렌더링합니다.
-5. `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/app/globals.css`에서 전체 레이아웃, 반응형 스타일, 브랜드 컬러를 관리합니다.
+1. 한국어/영어 포트폴리오 데이터를 기준으로 화면 내용을 구성합니다.
+2. 사용자가 언어 버튼을 선택하면 같은 포트폴리오 정보를 해당 언어로 보여줍니다.
+3. 첫 화면에는 소개 문구, 주요 링크, 프로필 사진을 배치합니다.
+4. 아래 영역에는 기술 영역, 성과, 학력, 경력, 자격, 연락 링크를 순서대로 보여줍니다.
+5. 화면 폭에 따라 데스크톱과 모바일 레이아웃이 자연스럽게 바뀝니다.
 
 ## 주요 섹션
 
@@ -38,8 +38,7 @@
 첫 화면 상단의 `한국어` / `English` 버튼으로 표시 언어를 전환합니다.
 
 - 기본 언어: 한국어
-- 영어 데이터: `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/data/profile.ts`의 `localizedProfiles.en`
-- 한국어 데이터: `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/data/profile.ts`의 `localizedProfiles.ko`
+- 지원 언어: 한국어, 영어
 
 ## 브랜드 컬러
 
@@ -56,25 +55,6 @@ R32 G38 B50
 C87 M80 Y70 K52
 PANTONE 433 C
 ```
-
-## 프로필 사진
-
-현재 Hero 오른쪽 영역은 사진을 넣을 수 있는 프로필 비주얼 영역으로 구성되어 있습니다.
-
-사진을 추가할 때는 다음 방식으로 반영합니다.
-
-1. 사진 파일을 `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/public/Jaeyoung.jpg`에 둡니다.
-2. `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/data/profile.ts`의 `profileImage.src`를 `/Jaeyoung.jpg`로 설정합니다.
-3. `bun run lint`와 `bun run build`로 검증합니다.
-
-사진 파일이 없을 때는 실제 인물 사진을 임의로 생성하지 않고, 이니셜 기반 프로필 비주얼을 보여줍니다.
-
-## 작업 기록 원칙
-
-- 검증 가능한 작업 단위가 끝날 때마다 커밋합니다.
-- 커밋 전에는 `git diff`, `bun run lint`, `bun run build`를 확인합니다.
-- README는 기능, 동작 방식, 구조가 바뀔 때 함께 업데이트합니다.
-- 커밋 메시지는 짧은 conventional commit 형식을 사용합니다.
 
 ## 프로젝트 구조
 
@@ -110,27 +90,3 @@ PANTONE 433 C
 - Tailwind CSS
 - ESLint
 - lucide-react
-
-## 실행 방법
-
-```bash
-cd /Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home
-bun install
-bun run dev
-```
-
-개발 서버가 실행되면 브라우저에서 `http://localhost:3000`으로 접속합니다.
-
-## 검증 방법
-
-```bash
-cd /Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home
-bun run lint
-bun run build
-```
-
-## 수정 방법
-
-- 포트폴리오 내용/번역 수정: `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/data/profile.ts`
-- 화면 섹션 수정: `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/components`
-- 전체 스타일/브랜드 컬러 수정: `/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home/src/app/globals.css`
