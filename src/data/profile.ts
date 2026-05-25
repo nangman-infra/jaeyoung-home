@@ -6,7 +6,6 @@ export type ProfileContent = {
   bio: string;
   portraitAlt: string;
   portraitInitials: string;
-  heroKicker: string;
   languageLabel: string;
   linkAriaLabel: string;
   specialties: string[];
@@ -64,7 +63,6 @@ export const localizedProfiles: Record<LanguageCode, ProfileContent> = {
   ko: {
     name: "유재영",
     role: "AI와 웹 기술로 비즈니스 문제를 해결하는 개발자",
-    heroKicker: "Portfolio",
     languageLabel: "언어 선택",
     linkAriaLabel: "외부 링크",
     portraitAlt: "유재영 프로필 사진",
@@ -133,7 +131,6 @@ export const localizedProfiles: Record<LanguageCode, ProfileContent> = {
   en: {
     name: "Jaeyoung Yu",
     role: "Developer solving business problems with AI and web technologies",
-    heroKicker: "Portfolio",
     languageLabel: "Language",
     linkAriaLabel: "External links",
     portraitAlt: "Profile photo of Jaeyoung Yu",

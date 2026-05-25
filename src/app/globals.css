@@ -102,7 +102,6 @@ main {
   gap: 1rem;
 }
 
-.hero-kicker,
 .item-meta {
   margin: 0;
   color: var(--accent);

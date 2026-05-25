@@ -40,7 +40,6 @@ export function HeroSection({ profile }: HeroSectionProps) {
   return (
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="hero-kicker">{profile.heroKicker}</p>
         <h1 id="hero-title">{profile.name}</h1>
         <p className="hero-role">{profile.role}</p>
         <p className="hero-summary">{profile.bio}</p>
