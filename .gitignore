@@ -2,3 +2,17 @@ AGENTS.md
 scratchpad.md
 docs/frontend-guidelines.md
 docs/backend-guidelines.md
+
+node_modules
+.next
+out
+dist
+coverage
+
+.env
+.env.*
+!.env.example
+
+*.log
+.DS_Store
+.idea/
