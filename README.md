@@ -4,7 +4,7 @@
 
 ## 구현 목표
 
-- 재영의 Bio, Specialties, Achievements, Education, Work Experience, Certifications, Links를 명확하게 보여줍니다.
+- Bio, Specialties, Achievements, Education, Work Experience, Certifications, Links를 명확하게 보여줍니다.
 - 첫 화면에서 이름, 역할, 핵심 소개, 주요 링크를 바로 확인할 수 있게 합니다.
 - 한국어/영어 전환 버튼으로 같은 정보를 언어별로 확인할 수 있게 합니다.
 - 포트폴리오 정보는 코드 안에 흩어두지 않고 `src/data/profile.ts`에 모아 관리합니다.
@@ -59,7 +59,7 @@ PANTONE 433 C
 ## 프로젝트 구조
 
 ```text
-/Users/jaeyoung/Developments/project/nangman-infra/jaeyoung-home
+.
 ├── README.md
 ├── package.json
 ├── next.config.ts
