@@ -120,6 +120,8 @@ main {
 }
 
 .hero-role {
+  display: grid;
+  gap: 0.12em;
   max-width: 42rem;
   margin: 0;
   color: var(--accent-strong);
@@ -127,8 +129,14 @@ main {
   font-weight: 800;
   line-height: 1.25;
   overflow-wrap: normal;
-  white-space: nowrap;
+  white-space: normal;
   word-break: keep-all;
+}
+
+.hero-role span {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .hero-summary {
@@ -363,12 +371,6 @@ main {
   .certification-grid,
   .contact-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 1160px) {
-  .hero-role {
-    white-space: normal;
   }
 }
 

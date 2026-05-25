@@ -11,21 +11,34 @@ test.describe("hero layout", () => {
 
       const role = page.locator(".hero-role");
       const visual = page.locator(".profile-visual");
+      const roleLines = page.locator(".hero-role span");
 
       await expect(role).toContainText("Developer solving business problems with AI and web technologies");
+      await expect(roleLines).toHaveCount(2);
       await page.screenshot({ path: `test-results/english-hero-${width}.png`, fullPage: true });
 
-      const roleBox = await role.boundingBox();
       const visualBox = await visual.boundingBox();
       const viewport = page.viewportSize();
+      const lineBoxes = await roleLines.evaluateAll((elements) =>
+        elements.map((element) => {
+          const box = element.getBoundingClientRect();
 
-      expect(roleBox).not.toBeNull();
+          return {
+            right: box.right,
+            width: box.width,
+          };
+        }),
+      );
+
       expect(visualBox).not.toBeNull();
       expect(viewport).not.toBeNull();
 
-      if (!roleBox || !visualBox || !viewport) return;
+      if (!visualBox || !viewport) return;
 
-      expect(roleBox.x + roleBox.width).toBeLessThanOrEqual(visualBox.x - 12);
+      for (const lineBox of lineBoxes) {
+        expect(lineBox.width).toBeLessThanOrEqual(viewport.width);
+        expect(lineBox.right).toBeLessThanOrEqual(visualBox.x - 12);
+      }
     }
   });
 

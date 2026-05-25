@@ -41,7 +41,14 @@ export function HeroSection({ profile }: HeroSectionProps) {
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-copy">
         <h1 id="hero-title">{profile.name}</h1>
-        <p className="hero-role">{profile.role}</p>
+        <p className="hero-role" aria-label={profile.role.join(" ")}>
+          {profile.role.map((line, index) => (
+            <span key={line}>
+              {line}
+              {index < profile.role.length - 1 ? " " : ""}
+            </span>
+          ))}
+        </p>
         <p className="hero-summary">{profile.bio}</p>
         <div className="hero-actions" aria-label={profile.linkAriaLabel}>
           {links.map((link) => {
