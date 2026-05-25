@@ -43,7 +43,7 @@ export function ContactSection({ profile }: ContactSectionProps) {
 
   return (
     <section className="contact-section" aria-labelledby="contact-title">
-      <SectionHeading eyebrow="Links" title={profile.sections.contact} />
+      <SectionHeading title={profile.sections.contact} />
       <div className="contact-grid" id="contact-title">
         {contactLinks.map((link) => {
           const Icon = link.icon;
