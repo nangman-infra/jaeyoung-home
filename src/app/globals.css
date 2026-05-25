@@ -367,6 +367,12 @@ main {
   }
 }
 
+@media (max-width: 1160px) {
+  .hero-role {
+    white-space: normal;
+  }
+}
+
 @media (max-width: 520px) {
   .hero-section,
   .page-content,
