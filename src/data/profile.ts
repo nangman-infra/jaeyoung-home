@@ -62,7 +62,7 @@ export const languages: { code: LanguageCode; label: string }[] = [
 export const localizedProfiles: Record<LanguageCode, ProfileContent> = {
   ko: {
     name: "유재영",
-    role: ["AI와 웹 기술로", "비즈니스 문제를 해결하는 개발자"],
+    role: ["AI와 웹 기술로 비즈니스 문제를 해결하는 개발자"],
     languageLabel: "언어 선택",
     linkAriaLabel: "외부 링크",
     portraitAlt: "유재영 프로필 사진",
