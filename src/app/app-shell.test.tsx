@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import RootLayout, { metadata } from "@/app/layout";
+import RootLayout, { metadata, viewport } from "@/app/layout";
 import Home from "@/app/page";
 
 describe("app shell", () => {
@@ -14,6 +14,19 @@ describe("app shell", () => {
   it("exports portfolio metadata and wraps children in html/body", () => {
     expect(metadata.title).toBe("유재영 | Portfolio");
     expect(metadata.description).toContain("한국어/영어 포트폴리오");
+    expect(metadata.metadataBase?.toString()).toBe("https://jaeyoung.nangman.cloud/");
+    expect(metadata.alternates?.canonical).toBe("/");
+    expect(metadata.openGraph?.images?.[0]).toMatchObject({
+      url: "https://jaeyoung.nangman.cloud/Jaeyoung.jpg",
+      alt: "유재영 프로필 사진",
+    });
+    expect(metadata.icons?.icon).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ url: "/favicon.ico" }),
+        expect.objectContaining({ url: "/icon.svg" }),
+      ]),
+    );
+    expect(viewport.themeColor).toBe("#0064FF");
 
     const tree = RootLayout({ children: <div>layout child</div> });
 
@@ -35,5 +48,6 @@ describe("app shell", () => {
     }
 
     expect(body.type).toBe("body");
+    expect(React.Children.count(body.props.children)).toBeGreaterThanOrEqual(4);
   });
 });
