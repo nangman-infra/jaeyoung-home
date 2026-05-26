@@ -135,13 +135,14 @@ pipeline {
                         }
                         sh '''
                             set -eu
-                            export BUN_INSTALL="$WORKSPACE/.bun"
-                            export PATH="$BUN_INSTALL/bin:$PATH"
+                            export BUN_INSTALL_DIR="$WORKSPACE/.bun-tools"
+                            export PATH="$BUN_INSTALL_DIR/bin:$PATH"
+                            BUN_VERSION=$(node -p "require('./package.json').packageManager?.split('@')[1] || '1.2.22'")
 
                             node --version
 
                             if ! command -v bun >/dev/null 2>&1; then
-                                curl -fsSL https://bun.sh/install | bash
+                                npm install --global --prefix "$BUN_INSTALL_DIR" "bun@$BUN_VERSION"
                             fi
 
                             bun --version
@@ -160,11 +161,12 @@ pipeline {
                         dir(env.APP_DIRECTORY) {
                             sh '''
                                 set -eu
-                                export BUN_INSTALL="$WORKSPACE/.bun"
-                                export PATH="$BUN_INSTALL/bin:$PATH"
+                                export BUN_INSTALL_DIR="$WORKSPACE/.bun-tools"
+                                export PATH="$BUN_INSTALL_DIR/bin:$PATH"
+                                BUN_VERSION=$(node -p "require('./package.json').packageManager?.split('@')[1] || '1.2.22'")
 
                                 if ! command -v bun >/dev/null 2>&1; then
-                                    curl -fsSL https://bun.sh/install | bash
+                                    npm install --global --prefix "$BUN_INSTALL_DIR" "bun@$BUN_VERSION"
                                 fi
 
                                 if node -e "const p=require('./package.json'); process.exit(p.scripts && p.scripts.test ? 0 : 1)"; then
