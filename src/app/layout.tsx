@@ -8,7 +8,7 @@ const SITE_NAME = "유재영 | Portfolio";
 const SITE_DESCRIPTION =
   "AI와 웹 기술로 비즈니스 문제를 해결하는 개발자 유재영의 한국어/영어 포트폴리오입니다.";
 const ANALYTICS_SCRIPT_URL = "https://analytics.nangman.cloud/api/script.js";
-const ANALYTICS_SITE_ID = "undefined";
+const ANALYTICS_SITE_ID = "6f327e3d18b5";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
